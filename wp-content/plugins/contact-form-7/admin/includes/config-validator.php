@@ -1,7 +1,5 @@
 <?php
 
-if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
-
 add_action( 'wpcf7_admin_menu', 'wpcf7_admin_init_bulk_cv', 10, 0 );
 
 function wpcf7_admin_init_bulk_cv() {
@@ -173,7 +171,7 @@ function wpcf7_admin_bulk_validate_page() {
 
 	$formatter->append_preformatted(
 		wpcf7_link(
-			'https://contactform7.com/configuration-validator-faq/',
+			__( 'https://contactform7.com/configuration-validator-faq/', 'contact-form-7' ),
 			__( 'FAQ about Configuration Validator', 'contact-form-7' )
 		)
 	);

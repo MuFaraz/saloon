@@ -1,7 +1,5 @@
 <?php
 
-if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
-
 /**
  * The base class for form-tag generators management.
  */
@@ -18,7 +16,9 @@ class WPCF7_TagGenerator {
 	 * Returns the singleton instance of this class.
 	 */
 	public static function get_instance() {
-		self::$instance ??= new self();
+		if ( empty( self::$instance ) ) {
+			self::$instance = new self();
+		}
 
 		return self::$instance;
 	}

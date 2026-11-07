@@ -1,11 +1,7 @@
 <?php
 /**
- * Drop-down menu
- *
- * @link https://contactform7.com/checkboxes-radio-buttons-and-menus/
- */
-
-if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+** A base module for [select] and [select*]
+**/
 
 /* form_tag handler */
 
@@ -240,11 +236,7 @@ function wpcf7_tag_generator_menu( $contact_form, $options ) {
 		'select' => array(
 			'display_name' => __( 'Drop-down menu', 'contact-form-7' ),
 			'heading' => __( 'Drop-down menu form-tag generator', 'contact-form-7' ),
-			'description' => sprintf(
-				/* translators: %s: URL to drop-down menu doc */
-				__( 'Generates a form-tag for a <a href="%s">drop-down menu</a>.', 'contact-form-7' ),
-				'https://contactform7.com/checkboxes-radio-buttons-and-menus/'
-			),
+			'description' => __( 'Generates a form-tag for a <a href="https://contactform7.com/checkboxes-radio-buttons-and-menus/">drop-down menu</a>.', 'contact-form-7' ),
 		),
 	);
 

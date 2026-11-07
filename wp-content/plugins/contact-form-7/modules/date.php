@@ -1,11 +1,8 @@
 <?php
 /**
- * Date field
- *
- * @link https://contactform7.com/date-field/
- */
-
-if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+** A base module for the following types of tags:
+** 	[date] and [date*]		# Date
+**/
 
 /* form_tag handler */
 
@@ -192,11 +189,7 @@ function wpcf7_tag_generator_date( $contact_form, $options ) {
 		'date' => array(
 			'display_name' => __( 'Date field', 'contact-form-7' ),
 			'heading' => __( 'Date field form-tag generator', 'contact-form-7' ),
-			'description' => sprintf(
-				/* translators: %s: URL to date input field doc */
-				__( 'Generates a form-tag for a <a href="%s">date input field</a>.', 'contact-form-7' ),
-				'https://contactform7.com/date-field/'
-			),
+			'description' => __( 'Generates a form-tag for a <a href="https://contactform7.com/date-field/">date input field</a>.', 'contact-form-7' ),
 		),
 	);
 

@@ -1,11 +1,8 @@
 <?php
 /**
- * Flamingo
- *
- * @link https://contactform7.com/save-submitted-messages-with-flamingo/
- */
-
-if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+** Module for Flamingo plugin.
+** http://wordpress.org/extend/plugins/flamingo/
+**/
 
 add_action( 'wpcf7_submit', 'wpcf7_flamingo_submit', 10, 2 );
 

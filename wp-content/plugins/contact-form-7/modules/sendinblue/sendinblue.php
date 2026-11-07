@@ -5,8 +5,6 @@
  * @link https://contactform7.com/sendinblue-integration/
  */
 
-if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
-
 wpcf7_include_module_file( 'sendinblue/service.php' );
 wpcf7_include_module_file( 'sendinblue/contact-form-properties.php' );
 wpcf7_include_module_file( 'sendinblue/doi.php' );
@@ -47,14 +45,8 @@ function wpcf7_sendinblue_submit( $contact_form, $result ) {
 		return;
 	}
 
-	if (
-		empty( $result['status'] ) or
-		! in_array(
-			$result['status'],
-			array( 'mail_sent', 'mail_failed' ),
-			true
-		)
-	) {
+	if ( empty( $result['status'] )
+	or ! in_array( $result['status'], array( 'mail_sent', 'mail_failed' ), true ) ) {
 		return;
 	}
 
@@ -63,10 +55,8 @@ function wpcf7_sendinblue_submit( $contact_form, $result ) {
 	$consented = true;
 
 	foreach ( $contact_form->scan_form_tags( 'feature=name-attr' ) as $tag ) {
-		if (
-			$tag->has_option( 'consent_for:sendinblue' ) and
-			null == $submission->get_posted_data( $tag->name )
-		) {
+		if ( $tag->has_option( 'consent_for:sendinblue' )
+		and null == $submission->get_posted_data( $tag->name ) ) {
 			$consented = false;
 			break;
 		}

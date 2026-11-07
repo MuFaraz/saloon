@@ -1,7 +1,5 @@
 <?php
 
-if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
-
 class WPCF7_ContactForm {
 
 	use WPCF7_SWV_SchemaHolder;

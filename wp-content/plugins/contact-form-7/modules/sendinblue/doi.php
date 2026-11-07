@@ -5,7 +5,6 @@
  * @link https://contactform7.com/doi-helper/
  */
 
-if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 add_action(
 	'doihelper_init',

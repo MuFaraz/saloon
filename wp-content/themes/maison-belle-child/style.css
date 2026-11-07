@@ -1,0 +1,16 @@
+/*
+Theme Name:   Maison Belle Child
+Theme URI:    https://example.com/maison-belle
+Description:  Presentation layer for the Maison Belle nail salon site. A child of GeneratePress: all templates, styles and scripts live here, so parent updates never overwrite the design. Content (services, gallery, reviews, promotions, settings, schema) lives in the Maison Belle Core plugin.
+Author:       Maison Belle
+Template:     generatepress
+Version:      1.0.0
+Requires at least: 6.0
+Requires PHP: 7.4
+License:      GNU General Public License v2 or later
+License URI:  https://www.gnu.org/licenses/gpl-2.0.html
+Text Domain:  maison-belle-child
+
+All real styles are in assets/css/main.css (loaded by inc/enqueue.php).
+This file only carries the theme header WordPress needs.
+*/

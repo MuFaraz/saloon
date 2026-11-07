@@ -1,11 +1,7 @@
 <?php
 /**
- * Character count
- *
- * @link https://contactform7.com/max-min-length-options-and-character-count/
- */
-
-if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+** A base module for [count], Twitter-like character count
+**/
 
 /* form_tag handler */
 

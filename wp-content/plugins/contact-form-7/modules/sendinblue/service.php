@@ -1,7 +1,5 @@
 <?php
 
-if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
-
 if ( ! class_exists( 'WPCF7_Service' ) ) {
 	return;
 }
@@ -13,7 +11,9 @@ class WPCF7_Sendinblue extends WPCF7_Service {
 	private $api_key;
 
 	public static function get_instance() {
-		self::$instance ??= new self();
+		if ( empty( self::$instance ) ) {
+			self::$instance = new self();
+		}
 
 		return self::$instance;
 	}
@@ -173,7 +173,7 @@ class WPCF7_Sendinblue extends WPCF7_Service {
 
 		$formatter->append_preformatted(
 			wpcf7_link(
-				'https://contactform7.com/sendinblue-integration/',
+				__( 'https://contactform7.com/sendinblue-integration/', 'contact-form-7' ),
 				__( 'Brevo integration', 'contact-form-7' )
 			)
 		);
@@ -330,15 +330,13 @@ trait WPCF7_Sendinblue_API {
 	}
 
 
-	public function get_templates( $options = '' ) {
-		$options = wp_parse_args( $options, array(
-			'templateStatus' => 'true',
-			'limit' => 50,
-			'offset' => 0,
-		) );
-
+	public function get_templates() {
 		$endpoint = add_query_arg(
-			$options,
+			array(
+				'templateStatus' => 'true',
+				'limit' => 100,
+				'offset' => 0,
+			),
 			'https://api.sendinblue.com/v3/smtp/templates'
 		);
 

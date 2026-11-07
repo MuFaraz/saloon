@@ -1,7 +1,5 @@
 <?php
 
-if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
-
 function wpcf7_current_action() {
 	foreach ( array( 'action', 'action2' ) as $var ) {
 		$action = wpcf7_superglobal_request( $var, null );

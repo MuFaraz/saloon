@@ -5,7 +5,6 @@
  * @link https://contactform7.com/reflection/
  */
 
-if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 add_action( 'wpcf7_init', 'wpcf7_add_form_tag_reflection', 10, 0 );
 

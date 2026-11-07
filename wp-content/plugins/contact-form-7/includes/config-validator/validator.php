@@ -1,7 +1,5 @@
 <?php
 
-if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
-
 require_once path_join( __DIR__, 'form.php' );
 require_once path_join( __DIR__, 'mail.php' );
 require_once path_join( __DIR__, 'messages.php' );
@@ -45,7 +43,7 @@ class WPCF7_ConfigValidator {
 	use WPCF7_ConfigValidator_Messages;
 	use WPCF7_ConfigValidator_AdditionalSettings;
 
-	private readonly WPCF7_ContactForm $contact_form;
+	private $contact_form;
 	private $errors = array();
 	private $include;
 	private $exclude;
@@ -55,7 +53,9 @@ class WPCF7_ConfigValidator {
 	 * Returns a URL linking to the documentation page for the error type.
 	 */
 	public static function get_doc_link( $child_page = '' ) {
-		$url = 'https://contactform7.com/configuration-errors/';
+		$url = __( 'https://contactform7.com/configuration-errors/',
+			'contact-form-7'
+		);
 
 		if ( '' !== $child_page ) {
 			$child_page = strtr( $child_page, '_', '-' );

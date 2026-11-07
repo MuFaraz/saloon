@@ -1,7 +1,5 @@
 <?php
 
-if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
-
 if ( ! class_exists( 'WPCF7_Service' ) ) {
 	return;
 }
@@ -14,7 +12,9 @@ class WPCF7_RECAPTCHA extends WPCF7_Service {
 
 
 	public static function get_instance() {
-		self::$instance ??= new self();
+		if ( empty( self::$instance ) ) {
+			self::$instance = new self();
+		}
 
 		return self::$instance;
 	}
@@ -296,7 +296,7 @@ class WPCF7_RECAPTCHA extends WPCF7_Service {
 
 		$formatter->append_preformatted(
 			wpcf7_link(
-				'https://contactform7.com/recaptcha/',
+				__( 'https://contactform7.com/recaptcha/', 'contact-form-7' ),
 				__( 'reCAPTCHA (v3)', 'contact-form-7' )
 			)
 		);

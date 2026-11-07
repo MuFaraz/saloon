@@ -5,7 +5,6 @@
  * @link https://contactform7.com/doi-helper/
  */
 
-if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 add_action( 'wpcf7_doi', 'wpcf7_doihelper_start_session', 10, 3 );
 

@@ -5,8 +5,6 @@
  * @link https://akismet.com/development/api/
  */
 
-if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
-
 wpcf7_include_module_file( 'akismet/service.php' );
 
 

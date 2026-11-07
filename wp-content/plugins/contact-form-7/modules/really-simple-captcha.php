@@ -1,11 +1,7 @@
 <?php
 /**
- * Really Simple CAPTCHA
- *
- * @link https://contactform7.com/captcha/
- */
-
-if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+** A base module for [captchac] and [captchar]
+**/
 
 /* form_tag handler */
 

@@ -5,8 +5,6 @@
  * @link https://contactform7.com/constant-contact-integration/
  */
 
-if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
-
 add_action(
 	'wpcf7_init',
 	'wpcf7_constant_contact_register_service',
@@ -37,7 +35,9 @@ class WPCF7_ConstantContact extends WPCF7_Service {
 	protected $client_secret = '';
 
 	public static function get_instance() {
-		self::$instance ??= new self();
+		if ( empty( self::$instance ) ) {
+			self::$instance = new self();
+		}
 
 		return self::$instance;
 	}
@@ -132,7 +132,7 @@ class WPCF7_ConstantContact extends WPCF7_Service {
 
 		$formatter->append_preformatted(
 			wpcf7_link(
-				'https://contactform7.com/2024/02/02/we-end-the-constant-contact-integration/',
+				__( 'https://contactform7.com/2024/02/02/we-end-the-constant-contact-integration/', 'contact-form-7' ),
 				__( 'The Constant Contact integration has been removed.', 'contact-form-7' )
 			)
 		);
